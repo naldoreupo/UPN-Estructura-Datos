@@ -6,5 +6,15 @@ namespace ListasEnlazadasDobles
         {
             InitializeComponent();
         }
+
+        private void txtDato_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

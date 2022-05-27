@@ -23,9 +23,11 @@ namespace Listas_Simples
             foreach (var item in listaConLibreria)
             {
                 txtListadoConLibreria.Text += item + Environment.NewLine;
-
             }
+        }
 
+        private void txtDato_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

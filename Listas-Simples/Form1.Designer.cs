@@ -50,6 +50,7 @@
             this.txtDato.Name = "txtDato";
             this.txtDato.Size = new System.Drawing.Size(300, 55);
             this.txtDato.TabIndex = 1;
+            this.txtDato.TextChanged += new System.EventHandler(this.txtDato_TextChanged);
             // 
             // txtListado
             // 
