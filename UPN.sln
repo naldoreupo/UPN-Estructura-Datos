@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListasEnlazadasDobles", "ListasEnlazadasDobles\ListasEnlazadasDobles.csproj", "{2DA3E15C-2461-4A65-8413-F344F17DF0CF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Listas-Simples", "Listas-Simples\Listas-Simples.csproj", "{8EB6C568-0536-4319-B32B-B6491A2B8139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listas-doble-enlazadas", "Listas-doble-enlazadas\Listas-doble-enlazadas.csproj", "{6B004E13-ED86-4DC0-9F57-C3BAEFA6BD8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Listas-doble-enlazadas", "Listas-doble-enlazadas\Listas-doble-enlazadas.csproj", "{6B004E13-ED86-4DC0-9F57-C3BAEFA6BD8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2DA3E15C-2461-4A65-8413-F344F17DF0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DA3E15C-2461-4A65-8413-F344F17DF0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DA3E15C-2461-4A65-8413-F344F17DF0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DA3E15C-2461-4A65-8413-F344F17DF0CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EB6C568-0536-4319-B32B-B6491A2B8139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EB6C568-0536-4319-B32B-B6491A2B8139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB6C568-0536-4319-B32B-B6491A2B8139}.Release|Any CPU.ActiveCfg = Release|Any CPU
