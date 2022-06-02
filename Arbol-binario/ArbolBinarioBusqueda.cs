@@ -9,21 +9,22 @@ namespace Arbol_binario
     internal class ArbolBinarioBusqueda //Sustantivos
     {
         public Nodo raiz;
+        public String inorder;
 
         public void Agregar(int dato)  //verbos ar er
         {
-            //Creacion nodod
+            //Creacion nodo
             Nodo nodo = new Nodo();
             nodo.dato = dato;
 
 
-            if (raiz == null)
+            if (raiz == null) // SI est vacion
             {
                 raiz = nodo;
             }
             else
             {
-                Nodo nodoRecorrido = raiz; // rECORREMOS DES LA RAIZ
+                Nodo nodoRecorrido = raiz; // Recorremos empiza LA RAIZ
                 Nodo nodoDisponible = null; 
 
                 // Identificar nodo a insertar nodo
@@ -32,7 +33,7 @@ namespace Arbol_binario
                     nodoDisponible = nodoRecorrido;
                     if (dato == nodoRecorrido.dato) // Evitar repetido
                     {
-                        return;// sale de la funcion
+                        return;//sale de la funcion
                     }
                     else if (dato < nodoRecorrido.dato)
                     {
@@ -54,7 +55,21 @@ namespace Arbol_binario
                     nodoDisponible.Derecho = nodo;
                 }    
             }
+        }
 
+        //InOrder Izquierda - raiz - derecha
+        public void RecorrerInOrder(Nodo nodo) // funcion recursiva otra forma de recorre
+        {
+            //string inorder = "";
+
+            if (nodo != null)
+            {   
+                RecorrerInOrder(nodo.Izquierdo);
+
+                inorder += nodo.dato + " ->";
+
+                RecorrerInOrder(nodo.Derecho);
+            }
         }
     }
 }

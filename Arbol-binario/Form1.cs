@@ -21,6 +21,10 @@ namespace Arbol_binario
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             abb.Agregar(int.Parse(txtDato.Text));
+            abb.inorder = "";
+            abb.RecorrerInOrder(abb.raiz);
+
+            txtListado.Text = abb.inorder;
         }
     }
 }
