@@ -10,23 +10,28 @@ namespace cola_sin_libreria
     {
         Nodo Final;//Agregar
         Nodo Inicio; //Eliminar y extrae
-
+        int contador = 0;
         public void Encolar(int dato)
         {
-            //creacion del nodo
-            Nodo nodo = new Nodo();
-            nodo.dato = dato;
+            if (contador > 10)
+            {
+                //creacion del nodo
+                Nodo nodo = new Nodo();
+                nodo.dato = dato;
 
-            if(Inicio == null ) //Cola este vacia
-            {
-                Inicio = nodo;
-                Final = nodo;
+                if (Inicio == null) //Cola este vacia
+                {
+                    Inicio = nodo;
+                    Final = nodo;
+                }
+                else // Cola tiene elementos
+                {
+                    Final.siguiente = nodo;
+                    Final = nodo;
+                }
             }
-            else // Cola tiene elementos
-            {
-                Final.siguiente = nodo;
-                Final = nodo;
-            }
+            contador++;
+
         }
 
         public string Mostrar()
@@ -49,6 +54,8 @@ namespace cola_sin_libreria
             string retorno = Inicio.dato.ToString();
 
             Inicio = Inicio.siguiente;
+
+            contador--;
 
             return retorno;                
         }

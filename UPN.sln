@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cola", "Cola\Cola.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pila-sin-libreria", "pila-sin-libreria\pila-sin-libreria.csproj", "{57FC0055-6319-4A69-AFAF-4277E66D3565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cola-sin-libreria", "cola-sin-libreria\cola-sin-libreria.csproj", "{623CA19D-636A-4609-A394-D151DB3E8592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cola-sin-libreria", "cola-sin-libreria\cola-sin-libreria.csproj", "{623CA19D-636A-4609-A394-D151DB3E8592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbol-binario", "Arbol-binario\Arbol-binario.csproj", "{7B2C3504-286B-4166-88CE-501E40EDF599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{623CA19D-636A-4609-A394-D151DB3E8592}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{623CA19D-636A-4609-A394-D151DB3E8592}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{623CA19D-636A-4609-A394-D151DB3E8592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B2C3504-286B-4166-88CE-501E40EDF599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B2C3504-286B-4166-88CE-501E40EDF599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B2C3504-286B-4166-88CE-501E40EDF599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B2C3504-286B-4166-88CE-501E40EDF599}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
