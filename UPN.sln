@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pila", "Pila\Pila.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cola", "Cola\Cola.csproj", "{A7302E19-2091-42C6-BAC1-C46E3ACDB870}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pila-sin-libreria", "pila-sin-libreria\pila-sin-libreria.csproj", "{57FC0055-6319-4A69-AFAF-4277E66D3565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A7302E19-2091-42C6-BAC1-C46E3ACDB870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7302E19-2091-42C6-BAC1-C46E3ACDB870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7302E19-2091-42C6-BAC1-C46E3ACDB870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57FC0055-6319-4A69-AFAF-4277E66D3565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FC0055-6319-4A69-AFAF-4277E66D3565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FC0055-6319-4A69-AFAF-4277E66D3565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FC0055-6319-4A69-AFAF-4277E66D3565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
