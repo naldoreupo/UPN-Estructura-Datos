@@ -52,6 +52,17 @@ namespace pila_sin_libreria
             return dato;
         }
 
+        ///peek -- extraer
+        ///
+        public string extraer()
+
+        {
+            string dato = Tope.dato;
+
+            return dato;
+
+        }
+
 
 
     }

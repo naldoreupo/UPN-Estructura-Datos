@@ -36,5 +36,14 @@ namespace pila_sin_libreria
             txtListado.Text = pila.Mostrar();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {            string dato = pila.extraer();
+
+            MessageBox.Show(dato);
+
+
+            txtListado.Text = pila.Mostrar();
+        }
     }
 }
