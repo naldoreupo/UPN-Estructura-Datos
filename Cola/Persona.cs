@@ -8,7 +8,7 @@ namespace Cola
 {
     internal class Persona
     {
-     public string nombre { get; set }   
+        public string nombre { get; set; }   
         public int edad { get; set; }
     }
 }
