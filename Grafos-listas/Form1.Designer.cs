@@ -38,6 +38,8 @@
             this.btnConectar = new System.Windows.Forms.Button();
             this.txtListaAdyacencias = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtDFS = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtDato
@@ -125,11 +127,30 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Lista Adyacencias";
             // 
+            // txtDFS
+            // 
+            this.txtDFS.Location = new System.Drawing.Point(1098, 660);
+            this.txtDFS.Multiline = true;
+            this.txtDFS.Name = "txtDFS";
+            this.txtDFS.Size = new System.Drawing.Size(774, 165);
+            this.txtDFS.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1098, 578);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 48);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "DFS";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1514, 1158);
+            this.ClientSize = new System.Drawing.Size(2116, 1408);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtDFS);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtListaAdyacencias);
             this.Controls.Add(this.btnConectar);
@@ -159,5 +180,7 @@
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.TextBox txtListaAdyacencias;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDFS;
+        private System.Windows.Forms.Label label5;
     }
 }

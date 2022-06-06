@@ -53,5 +53,39 @@ namespace Grafos_listas
             return retonar;
 
         }
+
+        public string RecorridoDFS()
+        {
+            string DFS = "";
+            List<Nodo> recorrdioDFS = new List<Nodo>();
+
+            Queue<Nodo> cola = new Queue<Nodo>();
+
+            Nodo nodoInicial = nodos.First();
+
+            cola.Enqueue(nodoInicial);
+
+            while (cola.Count() > 0)
+            {
+                Nodo nodoActual = cola.Dequeue();
+
+                //Validar si el nodo fue procesdo y agregado al recorrdio
+                if (recorrdioDFS.Where(n => n.dato == nodoActual.dato).Count() == 0)
+                    recorrdioDFS.Add(nodoActual);
+
+                foreach (var item in nodoActual.adyacencias)
+                {
+                    if (recorrdioDFS.Where(n => n.dato == item.dato).Count() == 0)
+                        cola.Enqueue(item);
+                }
+            }
+
+            foreach (var item in recorrdioDFS)
+            {
+                DFS += item.dato + " -> ";
+            }
+
+            return DFS;
+        }
     }
 }

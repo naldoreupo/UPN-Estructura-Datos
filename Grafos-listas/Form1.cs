@@ -22,7 +22,7 @@ namespace Grafos_listas
         {
             grafo.Agregar(txtDato.Text);
             txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();
-
+            txtDFS.Text = grafo.RecorridoDFS();
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -38,8 +38,8 @@ namespace Grafos_listas
                 MessageBox.Show("No se pudo conectar");
             }
 
-
             txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();
+            txtDFS.Text = grafo.RecorridoDFS();
         }
     }
 }
