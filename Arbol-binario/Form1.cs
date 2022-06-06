@@ -24,7 +24,17 @@ namespace Arbol_binario
             abb.inorder = "";
             abb.RecorrerInOrder(abb.raiz);
 
-            txtListado.Text = abb.inorder;
+
+            abb.Formato = "";
+            abb.RecorreFormato(abb.raiz);
+
+            txtListado.Text = abb.inorder ;
+            txtFormato.Text = abb.Formato;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

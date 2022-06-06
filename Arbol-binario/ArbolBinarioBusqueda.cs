@@ -10,6 +10,7 @@ namespace Arbol_binario
     {
         public Nodo raiz;
         public String inorder;
+        public String Formato;
 
         public void Agregar(int dato)  //verbos ar er
         {
@@ -71,5 +72,23 @@ namespace Arbol_binario
                 RecorrerInOrder(nodo.Derecho);
             }
         }
+
+        public void RecorreFormato(Nodo nodo)
+        {
+
+            if( nodo != null)
+            {
+                if(nodo.Izquierdo != null )
+                    Formato += nodo.dato + " ->"  + nodo.Izquierdo.dato + " " ;
+
+                if (nodo.Derecho != null)
+                    Formato += nodo.dato + " ->" + nodo.Derecho.dato + " ";
+
+                RecorreFormato(nodo.Izquierdo);
+
+                RecorreFormato(nodo.Derecho);
+            }
+        }
+
     }
 }
