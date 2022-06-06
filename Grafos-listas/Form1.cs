@@ -27,7 +27,18 @@ namespace Grafos_listas
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            grafo.Conectar(txtOrigen.Text, txtDestino.Text);
+            var conectdo = grafo.Conectar(txtOrigen.Text, txtDestino.Text);
+
+            if (conectdo)
+            {
+                MessageBox.Show("Nodos conectados");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo conectar");
+            }
+
+
             txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();
         }
     }

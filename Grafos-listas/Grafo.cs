@@ -20,33 +20,34 @@ namespace Grafos_listas
             nodos.Add(nodoNuevo); 
         }
 
-        public void Conectar(string datoOrigen,string datoDestrino)
+        public bool Conectar(string datoOrigen,string datoDestrino)
         {
             //Buscar nodos
-            Nodo nodoOrigen = nodos.Single(n => n.dato == datoOrigen);
-            Nodo nodoDestino = nodos.Single(n => n.dato == datoDestrino);
+            Nodo nodoOrigen = nodos.SingleOrDefault(n => n.dato == datoOrigen);
+            Nodo nodoDestino = nodos.SingleOrDefault(n => n.dato == datoDestrino);
+
+            if (nodoOrigen == null || nodoDestino == null)
+                return false;
 
             //Conecto
             nodoOrigen.adyacencias.Add(nodoDestino);
+
+            return true;
         }
 
         public string ObtenerListaAdyacencias()
         {
             string retonar = "";
 
-
             foreach (var nodo in nodos)
             {
-
                 retonar += nodo.dato + "  -> ";
 
                 foreach (var adyacencia in nodo.adyacencias )
                 {
                     retonar += adyacencia.dato + "  -> ";
                 }
-
                 retonar += Environment.NewLine;
-
             }
             
             return retonar;
