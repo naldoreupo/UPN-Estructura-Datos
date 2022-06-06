@@ -54,7 +54,7 @@ namespace Grafos_listas
 
         }
 
-        public string RecorridoDFS()
+        public string RecorridoDFS(String datoABuscar)
         {
             string DFS = "";
             List<Nodo> recorrdioDFS = new List<Nodo>();
@@ -71,7 +71,13 @@ namespace Grafos_listas
 
                 //Validar si el nodo fue procesdo y agregado al recorrdio
                 if (recorrdioDFS.Where(n => n.dato == nodoActual.dato).Count() == 0)
+                {
                     recorrdioDFS.Add(nodoActual);
+                    if (nodoActual.dato == datoABuscar)
+                    {
+                        break;
+                    }          
+                }
 
                 foreach (var item in nodoActual.adyacencias)
                 {

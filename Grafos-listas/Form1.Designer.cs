@@ -40,6 +40,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtDFS = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDatoABuscar = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDato
@@ -144,11 +149,50 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "DFS";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtDatoABuscar);
+            this.groupBox1.Location = new System.Drawing.Point(1202, 119);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(768, 318);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(482, 130);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(225, 69);
+            this.btnBuscar.TabIndex = 17;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(52, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(238, 48);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Dato a buscar";
+            // 
+            // txtDatoABuscar
+            // 
+            this.txtDatoABuscar.Location = new System.Drawing.Point(312, 137);
+            this.txtDatoABuscar.Name = "txtDatoABuscar";
+            this.txtDatoABuscar.Size = new System.Drawing.Size(146, 55);
+            this.txtDatoABuscar.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2116, 1408);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDFS);
             this.Controls.Add(this.label4);
@@ -163,6 +207,8 @@
             this.Controls.Add(this.txtDato);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +228,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDFS;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDatoABuscar;
     }
 }
