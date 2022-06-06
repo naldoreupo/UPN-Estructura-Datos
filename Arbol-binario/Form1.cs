@@ -20,15 +20,27 @@ namespace Arbol_binario
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            abb.Agregar(int.Parse(txtDato.Text));
+     
+           
+
+            abb.Agregar( int.Parse(txtValor.Text)  );
+
             abb.inorder = "";
             abb.RecorrerInOrder(abb.raiz);
 
+            abb.preorder = "";
+            abb.RecorrerPreOrder(abb.raiz);
+
+
+            abb.postOrder = "";
+            abb.RecorrerPostOrder(abb.raiz);
 
             abb.Formato = "";
             abb.RecorreFormato(abb.raiz);
 
-            txtListado.Text = abb.inorder ;
+            txtListado.Text = abb.inorder;
+            txtPostOrder.Text = abb.postOrder;
+            txtPreOrder.Text = abb.preorder;
             txtFormato.Text = abb.Formato;
         }
 
@@ -36,5 +48,24 @@ namespace Arbol_binario
         {
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var encontrado =   abb.Buscar(int.Parse(txtValoraBuscar.Text));
+
+            if(encontrado)
+            {
+                MessageBox.Show("Valor encontrado");
+            }
+            else
+            {
+                MessageBox.Show("No encontrado");
+            }
+
+
+
+        }
+
+
     }
 }

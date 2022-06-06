@@ -8,6 +8,7 @@ namespace Arbol_binario
 {
     internal class Nodo
     {
+        //public int dato { get; set; }
         public int dato { get; set; }
         public Nodo Izquierdo { get; set; }
         public Nodo Derecho { get; set; }
