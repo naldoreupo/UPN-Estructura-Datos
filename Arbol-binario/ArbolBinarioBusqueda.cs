@@ -197,5 +197,132 @@ namespace Arbol_binario
             return false;
         }
 
+
+        public bool Eliminar(int dato)
+        {
+            Nodo nodoAElimar = raiz;
+            Nodo nodoPadre = null;
+            Boolean EsIzquierda = false;
+
+            //busqueda
+            while (nodoAElimar !=  null && nodoAElimar.dato != dato )
+            {
+                nodoPadre = nodoAElimar;
+                if(dato < nodoAElimar.dato)
+                {
+                    nodoAElimar = nodoAElimar.Izquierdo;
+                    EsIzquierda = true;
+                }
+                else
+                {
+                    nodoAElimar = nodoAElimar.Derecho;
+                    EsIzquierda = false;
+                }
+            }
+            if( nodoAElimar == null)
+            {
+                return false;
+            }
+
+
+            ///Caso 1
+            if ( nodoAElimar.Izquierdo == null && nodoAElimar.Derecho==null)
+            {
+                if(nodoAElimar == raiz)
+                {
+                    raiz = null;
+                }
+                if (EsIzquierda)
+                {
+                    nodoPadre.Izquierdo = null;
+                }
+                else
+                {
+                    nodoPadre.Derecho = null;
+                }
+            }
+            // Caso 2
+            else if(nodoAElimar.Derecho == null) // Izquieda tgiene datos
+            {
+                if(nodoAElimar == raiz)
+                {
+                    raiz = raiz.Izquierdo;
+                }
+                if (EsIzquierda)
+                {
+                    nodoPadre.Izquierdo = nodoAElimar.Izquierdo;
+                }
+                else
+                {
+                    nodoPadre.Derecho = nodoAElimar.Izquierdo;
+                }
+            }
+            // caso 2
+            else if (nodoAElimar.Izquierdo ==null) // Derehco datos
+            {
+                if (nodoAElimar == raiz)
+                {
+                    raiz = raiz.Derecho;
+                }
+                if (EsIzquierda)
+                {
+                    nodoPadre.Izquierdo = nodoAElimar.Derecho;
+                }
+                else
+                {
+                    nodoPadre.Derecho = nodoAElimar.Derecho;
+                }
+
+            }
+            //Cas 3
+            else {
+
+                Nodo nodoReemplazo = ObtnerNodoReemplazoDeSubArbolDerecho(nodoAElimar);
+
+
+                if( nodoAElimar == raiz)
+                {
+                    raiz = nodoReemplazo;
+                }
+
+                if (EsIzquierda)
+                {
+                    nodoPadre.Izquierdo = nodoReemplazo;
+                }
+                else
+                {
+                    nodoPadre.Derecho = nodoReemplazo;
+                }
+
+                nodoReemplazo.Izquierdo = nodoAElimar.Izquierdo;
+            }
+
+
+
+            return true;
+        }
+
+        private Nodo ObtnerNodoReemplazoDeSubArbolDerecho(Nodo nodoEliminar)
+        {
+            Nodo nodoAuxiliar = nodoEliminar.Derecho;
+            Nodo reemplazo = nodoEliminar;
+            Nodo reemplazopadre = nodoEliminar;
+
+            while (nodoAuxiliar != null)
+            {
+                reemplazopadre = reemplazo;
+                reemplazo = nodoAuxiliar;
+                nodoAuxiliar = nodoAuxiliar.Izquierdo;
+            }
+
+            if ( reemplazo != nodoEliminar.Derecho)
+            {
+                reemplazopadre.Izquierdo = reemplazo.Derecho;
+                reemplazo.Derecho = nodoEliminar.Derecho;
+            }
+
+            return reemplazo;
+        }
+
     }
 }

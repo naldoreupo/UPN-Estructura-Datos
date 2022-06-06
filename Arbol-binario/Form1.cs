@@ -66,6 +66,52 @@ namespace Arbol_binario
 
         }
 
+        private void txtElimnar_Click(object sender, EventArgs e)
+        {
+            abb.Eliminar(int.Parse(txtValoraBuscar.Text ));
 
+
+            abb.inorder = "";
+            abb.RecorrerInOrder(abb.raiz);
+
+            abb.preorder = "";
+            abb.RecorrerPreOrder(abb.raiz);
+
+
+            abb.postOrder = "";
+            abb.RecorrerPostOrder(abb.raiz);
+
+            abb.Formato = "";
+            abb.RecorreFormato(abb.raiz);
+
+            txtListado.Text = abb.inorder;
+            txtPostOrder.Text = abb.postOrder;
+            txtPreOrder.Text = abb.preorder;
+            txtFormato.Text = abb.Formato;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            abb.raiz = null;
+
+
+            abb.inorder = "";
+            abb.RecorrerInOrder(abb.raiz);
+
+            abb.preorder = "";
+            abb.RecorrerPreOrder(abb.raiz);
+
+
+            abb.postOrder = "";
+            abb.RecorrerPostOrder(abb.raiz);
+
+            abb.Formato = "";
+            abb.RecorreFormato(abb.raiz);
+
+            txtListado.Text = abb.inorder;
+            txtPostOrder.Text = abb.postOrder;
+            txtPreOrder.Text = abb.preorder;
+            txtFormato.Text = abb.Formato;
+        }
     }
 }
