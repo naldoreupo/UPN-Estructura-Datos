@@ -8,7 +8,10 @@ namespace Grafos_listas
 {
     internal class Grafo
     {
-        List<Nodo> nodos = new List<Nodo>();  
+        List<Nodo> nodos = new List<Nodo>();
+
+        public int CantidadNodos;
+        public int CantidadAristas;
 
         public void Agregar(string dato)
         {
@@ -17,20 +20,34 @@ namespace Grafos_listas
             nodoNuevo.dato = dato;
 
             //Integramos grafo
-            nodos.Add(nodoNuevo); 
+            nodos.Add(nodoNuevo);
+
+            CantidadNodos++;
         }
 
-        public bool Conectar(string datoOrigen,string datoDestrino)
+        public void eliminar()
+        {
+            CantidadNodos--;
+        }
+
+        public bool Conectar(string datoOrigen,string datoDestrino,int peso )
         {
             //Buscar nodos
             Nodo nodoOrigen = nodos.SingleOrDefault(n => n.dato == datoOrigen);
             Nodo nodoDestino = nodos.SingleOrDefault(n => n.dato == datoDestrino);
 
+            Arista arista = new Arista();
+            arista.origen = nodoOrigen;
+            arista.Destino = nodoDestino;
+            arista.peso = peso;
+
             if (nodoOrigen == null || nodoDestino == null)
                 return false;
 
             //Conecto
-            nodoOrigen.adyacencias.Add(nodoDestino);
+            nodoOrigen.adyacencias.Add(arista);
+
+            CantidadAristas++;
 
             return true;
         }
@@ -45,7 +62,7 @@ namespace Grafos_listas
 
                 foreach (var adyacencia in nodo.adyacencias )
                 {
-                    retonar += adyacencia.dato + "  -> ";
+                    retonar += adyacencia.Destino.dato +"(" + adyacencia.peso +  ")  -> ";
                 }
                 retonar += Environment.NewLine;
             }
@@ -81,8 +98,8 @@ namespace Grafos_listas
 
                 foreach (var item in nodoActual.adyacencias)
                 {
-                    if (recorrdioDFS.Where(n => n.dato == item.dato).Count() == 0)
-                        cola.Enqueue(item);
+                    if (recorrdioDFS.Where(n => n.dato == item.Destino.dato).Count() == 0)
+                        cola.Enqueue(item.Destino);
                 }
             }
 
@@ -93,5 +110,118 @@ namespace Grafos_listas
 
             return DFS;
         }
+
+        public string RecorridoBFS(String datoABuscar)
+        {
+            string DFS = "";
+            List<Nodo> recorrdioDFS = new List<Nodo>();
+
+            Stack<Nodo> cola = new Stack<Nodo>();
+
+            Nodo nodoInicial = nodos.First();
+
+            cola.Push(nodoInicial);
+
+            while (cola.Count() > 0)
+            {
+                Nodo nodoActual = cola.Pop();
+
+                //Validar si el nodo fue procesdo y agregado al recorrdio
+                if (recorrdioDFS.Where(n => n.dato == nodoActual.dato).Count() == 0)
+                {
+                    recorrdioDFS.Add(nodoActual);
+                    if (nodoActual.dato == datoABuscar)
+                    {
+                        break;
+                    }
+                }
+
+                foreach (var item in nodoActual.adyacencias)
+                {
+                    if (recorrdioDFS.Where(n => n.dato == item.Destino.dato).Count() == 0)
+                        cola.Push(item.Destino);
+                }
+            }
+
+            foreach (var item in recorrdioDFS)
+            {
+                DFS += item.dato + " -> ";
+            }
+
+            return DFS;
+        }
+
+        //public bool Buscar(string datoBuscar)
+        //{
+
+        //}
+
+        public Dictionary<Nodo, int> ObtenerRutasMinimas(string nodoInicial)
+        {
+            Dictionary<Nodo, int> pesos = new Dictionary<Nodo, int>(); // Clave -valor , nodo -peso
+
+            // A       B C D F
+            // A,0     B,infino  C,infinito  c,infinito C,infinito
+
+            List<Nodo> noVistados = new List<Nodo>();
+
+
+            ///Funciones lambda
+            var nodoOrigen = nodos.SingleOrDefault(nodo => nodo.dato == nodoInicial);
+
+            /*
+            foreach (var nodo in nodos)
+             {
+                 if ( nodo.dato == nodoInicial)
+                 {
+                     return nodo;
+                 }
+             }
+            */
+
+            pesos[nodoOrigen] = 0;
+
+            foreach (var nodo in nodos) // Inicializando
+            {
+                if (nodo != nodoOrigen)
+                    pesos[nodo] = int.MaxValue;
+
+                noVistados.Add(nodo);
+            }
+
+            while (noVistados.Count() > 0)
+            {
+                Nodo nodoComodin = null;
+                bool flag = true;
+
+
+
+                foreach (var nodo in noVistados) // Selecionar nodo comodin
+                {
+                    if (flag || pesos[nodo] < pesos[nodoComodin])
+                    {
+                        nodoComodin = nodo;
+                        flag = false;
+                    }
+
+                }
+
+                noVistados.Remove(nodoComodin);
+
+                foreach (var adyacencia in nodoComodin.adyacencias)
+                {
+                    var medida = pesos[nodoComodin] + adyacencia.peso; // acumulado
+
+                    if( medida < pesos[adyacencia.Destino]) // quedamos con el menor
+                    {
+                        pesos[adyacencia.Destino] = medida;    
+                    }
+
+                }
+            }
+
+            return pesos;
+        }
+
     }
 }

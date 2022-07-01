@@ -22,12 +22,16 @@ namespace Grafos_listas
         {
             grafo.Agregar(txtDato.Text);
             txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();
+            lblCantidadNodos.Text = grafo.CantidadNodos.ToString();
+            lblAristas.Text = grafo.CantidadAristas.ToString();
+
+
           
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            var conectdo = grafo.Conectar(txtOrigen.Text, txtDestino.Text);
+            var conectdo = grafo.Conectar(txtOrigen.Text, txtDestino.Text , int.Parse(txtPeso.Text) );
 
             if (conectdo)
             {
@@ -38,12 +42,35 @@ namespace Grafos_listas
                 MessageBox.Show("No se pudo conectar");
             }
 
-            txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();   
+            txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();
+            lblCantidadNodos.Text = grafo.CantidadNodos.ToString();
+            lblAristas.Text = grafo.CantidadAristas.ToString();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            txtDFS.Text = grafo.RecorridoDFS(txtDatoABuscar.Text );
+
+
+
+            txtDFS.Text = grafo.RecorridoDFS(txtDatoABuscar.Text);
+            txtBFS.Text = grafo.RecorridoBFS(txtDatoABuscar.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var rutas = grafo.ObtenerRutasMinimas(txtDatoABuscar.Text);
+
+
+            foreach (var item in rutas)
+            {
+                txtRutaMinima.Text += item.Key.dato + "(" + item.Value + ")";   
+            }
+
         }
     }
 }
