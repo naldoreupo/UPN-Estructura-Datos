@@ -37,7 +37,7 @@
             // 
             // txtListado
             // 
-            this.txtListado.Location = new System.Drawing.Point(424, 416);
+            this.txtListado.Location = new System.Drawing.Point(64, 566);
             this.txtListado.Multiline = true;
             this.txtListado.Name = "txtListado";
             this.txtListado.Size = new System.Drawing.Size(462, 629);
@@ -52,7 +52,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(408, 218);
+            this.btnAgregar.Location = new System.Drawing.Point(48, 368);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(225, 69);
             this.btnAgregar.TabIndex = 4;
@@ -62,7 +62,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(747, 218);
+            this.button1.Location = new System.Drawing.Point(387, 368);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(225, 69);
             this.button1.TabIndex = 7;
@@ -72,7 +72,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1035, 208);
+            this.button2.Location = new System.Drawing.Point(675, 358);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(225, 69);
             this.button2.TabIndex = 8;
