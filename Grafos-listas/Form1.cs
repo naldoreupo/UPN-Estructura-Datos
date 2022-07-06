@@ -72,5 +72,13 @@ namespace Grafos_listas
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            grafo.Eliminar(txtDatoABuscar.Text);
+            txtListaAdyacencias.Text = grafo.ObtenerListaAdyacencias();
+            lblCantidadNodos.Text = grafo.CantidadNodos.ToString();
+            lblAristas.Text = grafo.CantidadAristas.ToString();
+        }
     }
 }

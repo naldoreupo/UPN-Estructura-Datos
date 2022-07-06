@@ -55,6 +55,7 @@
             this.txtRutaMinima = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,13 +163,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDatoABuscar);
             this.groupBox1.Location = new System.Drawing.Point(1202, 119);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1022, 318);
+            this.groupBox1.Size = new System.Drawing.Size(1426, 318);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
@@ -295,11 +297,21 @@
             this.txtPeso.Size = new System.Drawing.Size(232, 55);
             this.txtPeso.TabIndex = 24;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1041, 130);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(225, 69);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2394, 1542);
+            this.ClientSize = new System.Drawing.Size(2750, 1542);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label10);
@@ -362,5 +374,6 @@
         private System.Windows.Forms.TextBox txtRutaMinima;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.Button button2;
     }
 }

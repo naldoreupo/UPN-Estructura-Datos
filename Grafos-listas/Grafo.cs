@@ -156,6 +156,21 @@ namespace Grafos_listas
 
         //}
 
+        public bool Eliminar(string nodoEliminar)
+        {
+            foreach (var item in nodos)
+            {
+                Arista adyacenciaAEliminar = item.adyacencias.SingleOrDefault(a => a.Destino.dato == nodoEliminar);
+                if (adyacenciaAEliminar != null)
+                { item.adyacencias.Remove(adyacenciaAEliminar); }
+            }
+
+            Nodo nodo = nodos.Single(n => n.dato == nodoEliminar);
+            nodos.Remove(nodo);           
+
+            return true;
+        }
+
         public Dictionary<Nodo, int> ObtenerRutasMinimas(string nodoInicial)
         {
             Dictionary<Nodo, int> pesos = new Dictionary<Nodo, int>(); // Clave -valor , nodo -peso
