@@ -20,7 +20,6 @@ namespace Grafos_listas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             grafo.Agregar("casa");
             grafo.Agregar("trabajo");
             grafo.Agregar("Oficina");
@@ -29,8 +28,32 @@ namespace Grafos_listas
             //.
 
             grafo.Conectar("casa", "trabajo", 2);
-            grafo.Conectar("casa", "Oficina", 5);
+            grafo.Conectar("casa", "Oficina", 5);         
             grafo.Conectar("Oficina", "trabajo", 8);
+
+
+
+            List<int> listaA = new List<int>();
+            List<int> listaB = new List<int>();
+
+            List<int> listaBConsolidado= new List<int>();
+
+            ///Unir listas
+            foreach (var item in listaA)
+            {
+                listaBConsolidado.Add(item);
+            }
+            foreach (var item in listaB)
+            {
+                listaBConsolidado.Add(item);
+            }
+
+
+            listaBConsolidado.AddRange(listaA);
+            listaBConsolidado.AddRange(listaB);
+
+
+
 
         }
 
